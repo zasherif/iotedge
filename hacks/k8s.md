@@ -30,7 +30,7 @@ mirrors:
 - Run a k3d cluster with local the local registry
 
 ```
-k3d cluster create multiserver --servers 1 registries.yaml:/etc/rancher/k3s/registries.yaml"
+k3d cluster create multiserver --servers 1 --volume "<path-of-registries-file>/registries.yaml:/etc/rancher/k3s/registries.yaml"
 docker network connect k3d-multiserver registry.localhost
 ```
 
