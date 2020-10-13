@@ -1,0 +1,34 @@
+iotedged:
+  image:
+   repository: "registry.localhost:5000/azureiotedge-iotedged"
+   tag: "1.2-linux-amd64"
+  env:
+    iotedgedLogLevel: "info"
+    
+iotedgedProxy:
+  image:
+   repository: "registry.localhost:5000/azureiotedge-proxy"
+   tag: "1.2-linux-amd64"
+
+edgeAgent:
+  image:
+   repository: "registry.localhost:5000/azureiotedge-agent"
+   tag: "1.2-linux-amd64"
+  env: 
+    runtimeLogLevel: "debug"
+    #enableK8sServiceCallTracing: "True"
+    #portMappingServiceType: "ClusterIP"
+    #runAsNonRoot: "False"
+    #persistentVolumeClaimDefaultSizeInMb: 100
+    #storageClassName: azurefile
+    #useMountSourceForVolumeName: true
+    #upstreamProtocol: 'AmqpWs'
+    #enableK8sServiceCallTracing: "True"
+    #persistentVolumeClaimDefaultSizeInMb: 1048576
+    #runtimeLogLevel: "debug"
+    #storageClassName: "-"
+provisioning:
+  source: "manual"
+  deviceConnectionString: "<dev-connection-string>"
+  dynamicReprovisioning: false
+    
